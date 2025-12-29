@@ -1,0 +1,35 @@
+{
+  "name": "four-underscore",
+  "version": "1.0.0",
+  "description": "Synchronized zsh configurations across all your machines via private GitHub repository",
+  "scripts": {
+    "setup": "chmod +x setup.zsh && ./setup.zsh",
+    "update": "chmod +x update.zsh && ./update.zsh",
+    "update:force": "chmod +x update.zsh && ./update.zsh --force",
+    "status": "cd ~/____ && git status",
+    "push": "cd ~/____ && git add . && git commit -m 'Update zsh configurations' && git push",
+    "pull": "cd ~/____ && git pull",
+    "reload": "source ~/.zshrc",
+    "backup": "tar -czf zsh-config-backup-$(date +%Y%m%d-%H%M%S).tar.gz ~/____",
+    "validate": "zsh -n setup.zsh && zsh -n update.zsh && echo '✅ All scripts are valid'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/run-time/four-underscore.git"
+  },
+  "keywords": [
+    "zsh",
+    "shell",
+    "configuration",
+    "sync",
+    "dotfiles",
+    "automation",
+    "terminal"
+  ],
+  "author": "Dave Alger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/run-time/four-underscore/issues"
+  },
+  "homepage": "https://github.com/run-time/four-underscore#readme"
+}
